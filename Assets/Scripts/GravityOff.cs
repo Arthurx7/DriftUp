@@ -16,6 +16,8 @@ public class GravityOff : MonoBehaviour
             {
                 originalMass = carRigidbody.mass;
                 StartCoroutine(ApplyPowerUpEffects(carRigidbody));
+                GetComponent<Collider>().enabled = false; 
+                GetComponent<Renderer>().enabled = false;
             }
         }
     }
