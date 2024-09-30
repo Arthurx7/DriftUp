@@ -24,16 +24,16 @@ public class GravityOff : MonoBehaviour
 
     private IEnumerator ApplyPowerUpEffects(Rigidbody carRigidbody)
     {
-        carRigidbody.mass = 100f;
-        //carRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+        carRigidbody.mass = 120f;
+        carRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 
         yield return new WaitForSeconds(1.5f);
 
         carRigidbody.useGravity = false;
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(4f);
 
-        //carRigidbody.constraints = RigidbodyConstraints.None;
+        carRigidbody.constraints = RigidbodyConstraints.None;
         carRigidbody.useGravity = true;
         carRigidbody.mass = originalMass;
 
