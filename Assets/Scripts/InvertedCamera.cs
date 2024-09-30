@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class InvertedCamera : MonoBehaviour
 {
-    public Transform playerCamera;  // La cámara que sigue al carro
-    public float duration = 10f;    // Duración del efecto de cámara invertida
+    public Transform playerCamera;  // La cï¿½mara que sigue al carro
+    public float duration = 10f;    // Duraciï¿½n del efecto de cï¿½mara invertida
 
     private Quaternion originalRotation;
+    public GameObject children;
 
     private void Start()
     {
-        // Guardamos la rotación original de la cámara
+        // Guardamos la rotaciï¿½n original de la cï¿½mara
         originalRotation = playerCamera.rotation;
     }
 
@@ -20,18 +21,19 @@ public class InvertedCamera : MonoBehaviour
         if (other.CompareTag("Car"))
         {
             StartCoroutine(InvertCamera());
+            children.SetActive(false);
         }
     }
 
     private IEnumerator InvertCamera()
     {
-        // Invertimos la cámara rotándola 180 grados en el eje Z
+        // Invertimos la cï¿½mara rotï¿½ndola 180 grados en el eje Z
         playerCamera.rotation = originalRotation * Quaternion.Euler(0, 0, 180);
 
         // Esperamos el tiempo definido
         yield return new WaitForSeconds(duration);
 
-        // Restauramos la rotación original de la cámara
+        // Restauramos la rotaciï¿½n original de la cï¿½mara
         playerCamera.rotation = originalRotation;
     }
 }

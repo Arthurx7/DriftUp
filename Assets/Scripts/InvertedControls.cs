@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class InvertedControls : MonoBehaviour
 {
+    public GameObject children;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Car"))
@@ -22,7 +23,9 @@ public class InvertedControls : MonoBehaviour
             {
                 Debug.Log("No se encontró el controlador de coche en el objeto.");
             }
+            children.SetActive(false);
         }
+
     }
 
     private IEnumerator ApplyInvertedControls(PrometeoCarController carController)

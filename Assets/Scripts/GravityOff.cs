@@ -5,6 +5,7 @@ using UnityEngine;
 public class GravityOff : MonoBehaviour
 {
     private float originalMass;
+    public GameObject children;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,6 +20,7 @@ public class GravityOff : MonoBehaviour
                 GetComponent<Collider>().enabled = false; 
                 GetComponent<Renderer>().enabled = false;
             }
+            children.SetActive(false);
         }
     }
 
