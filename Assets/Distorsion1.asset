@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: Distorsion
+  m_Name: Distorsion1
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: 2000121336882876267}
---- !u!114 &2000121336882876267
+  - {fileID: 5273697791485700753}
+--- !u!114 &5273697791485700753
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,5 +46,5 @@ MonoBehaviour:
     overrideState: 1
     value: 0
   scale:
-    overrideState: 1
+    overrideState: 0
     value: 1
