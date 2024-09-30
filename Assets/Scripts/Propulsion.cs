@@ -5,7 +5,8 @@ using UnityEngine;
 public class Propulsion : MonoBehaviour
 {
     public float propulsionForce = 10000f; 
-    public float duration = 5f;    
+    public float duration = 5f;
+    public GameObject children;    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,6 +27,7 @@ public class Propulsion : MonoBehaviour
             {
                 Debug.LogWarning("El carro no tiene todos los componentes necesarios.");
             }
+            children.SetActive(false);
         }
     }
 

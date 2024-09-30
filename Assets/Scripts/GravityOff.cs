@@ -5,6 +5,7 @@ using UnityEngine;
 public class GravityOff : MonoBehaviour
 {
     private float originalMass;
+    public GameObject children;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -19,21 +20,22 @@ public class GravityOff : MonoBehaviour
                 GetComponent<Collider>().enabled = false; 
                 GetComponent<Renderer>().enabled = false;
             }
+            children.SetActive(false);
         }
     }
 
     private IEnumerator ApplyPowerUpEffects(Rigidbody carRigidbody)
     {
-        carRigidbody.mass = 100f;
-        //carRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+        carRigidbody.mass = 130f;
+        carRigidbody.constraints = RigidbodyConstraints.FreezeRotation;
 
         yield return new WaitForSeconds(1.5f);
 
         carRigidbody.useGravity = false;
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(2f);
 
-        //carRigidbody.constraints = RigidbodyConstraints.None;
+        carRigidbody.constraints = RigidbodyConstraints.None;
         carRigidbody.useGravity = true;
         carRigidbody.mass = originalMass;
 
